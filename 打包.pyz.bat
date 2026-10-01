@@ -10,6 +10,7 @@ mkdir _pkg
 xcopy /e /i /q lanbench _pkg\lanbench >nul
 if exist selftest.py copy /y selftest.py _pkg\ >nul
 if exist README.md copy /y README.md _pkg\ >nul
+if exist LICENSE copy /y LICENSE _pkg\ >nul
 if exist LANBench.pyz del /q LANBench.pyz
 
 python -m zipapp _pkg -m "lanbench.cli:main" -o LANBench.pyz -c
