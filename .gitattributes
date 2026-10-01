@@ -1,0 +1,11 @@
+# 统一换行符：.bat 必须是 CRLF，否则 cmd 解析 :label / goto 可能出问题
+* text=auto eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+*.png binary
+*.jpg binary
+*.pyz binary
+*.exe binary
+*.ico binary
