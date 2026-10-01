@@ -8,7 +8,7 @@ cd /d "%~dp0"
 if exist _pkg rmdir /s /q _pkg
 mkdir _pkg
 xcopy /e /i /q lanbench _pkg\lanbench >nul
-rem 别把 __pycache__ 里的 .pyc 打进包里（体积翻倍且没意义）
+rem Do not ship __pycache__ .pyc files inside the pyz (doubles the size for nothing)
 if exist _pkg\lanbench\__pycache__ rmdir /s /q _pkg\lanbench\__pycache__
 if exist selftest.py copy /y selftest.py _pkg\ >nul
 if exist README.md copy /y README.md _pkg\ >nul
